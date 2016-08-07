@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Article</title>
+	<title>Hello World</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
@@ -13,27 +13,22 @@
 	<header>
 		<div class="container">
 			<img class="rc-img" src="images/react.svg" alt="react logo">
-			<h1>Article</h1>
+			<h1>Hello World</h1>
 		</div>
 	</header>
 	<div class="container" id="content"></div>
 
 	<script type="text/babel">
-	var Article = React.createClass({
+	var HelloWorld = React.createClass({
 		render: function() {
-			return <div>
-							<h2 className="title"> {this.props.title} </h2>
-							<p className="body"> {this.props.body} </p>
-							<h6 className="author"> {this.props.author} </h6>
-						</div>
+			return (
+				<input type="text" className="search-field" onChange={this.handleSearch} />
+				);
 		}
 	});
 
 	ReactDOM.render(
-		<Article title="Bitfinex опубликовал план восстановления работы биржи" author="команда Bitfinex" body="Криптовалютная биржа Bitfinex планирует постепенно возобновить доступ пользователей к сайту платформы, приостановленный в результате взлома и кражи 120 тыс. биткоинов.
-Администрация биржи повторила своё заявление о том, что они работают над восстановлением всех функций в полном объёме и дают пользователям возможность проверить свой баланс, но торговля, вывод и депонирование средств всё ещё недоступны.
-«Мы продолжаем расследование атаки совместно с органами власти и ведущими компаниями, занимающимися блокчейн-аналитикой, чтобы отследить похищенные биткоины. Кроме того, мы все это время работали над тем, чтобы вернуть платформу в рабочее состояние в безопасном режиме, чтобы пользователи могли зайти на сайт и увидеть, не подверглись ли их аккаунты атаке, или проверить состояние своих позиций и ордеров», — говорится в заявлении команды Bitfinex.
-Также был опубликован курс, по которому будут открыты маржинальные позиции после запуска биржи. Это $604.06 за один биткоин и $10.19 за один ether. Все сделки и открытые ордера, находившиеся в работе на момент атаки, отменены."/>,
+		<HelloWorld />,
 		document.getElementById("content")
 	);
 	</script>
