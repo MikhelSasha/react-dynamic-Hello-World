@@ -19,10 +19,27 @@
 	<div class="container" id="content"></div>
 
 	<script type="text/babel">
+	var NAME = 'Stranger';
+
 	var HelloWorld = React.createClass({
+		getInitialState: function() {
+			return {
+				displayedName: NAME
+			};
+		},
+
+		handleNameChange: function(event) {
+			var displayedName = event.target.value;
+    	this.setState({
+         displayedName: displayedName
+    	});
+		},
 		render: function() {
 			return (
-				<input type="text" className="search-field" onChange={this.handleSearch} />
+				<div>
+					<input type="text" className="search-field" onChange={this.handleNameChange} />
+					 <p>Hello, {}!</p>
+				</div>
 				);
 		}
 	});
